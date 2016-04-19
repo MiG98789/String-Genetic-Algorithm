@@ -5,7 +5,7 @@ Population::Population() //Default constructor
 	population_size = 2000;
 	max_generation = 20000;
 	elitism_rate = 0.25f;
-	mutation_rate = 0.1f;
+	mutation_rate = 0.25f;
 	target = "Hello world!";
 	population.clear();
 }
@@ -21,7 +21,7 @@ void Population::initPopulation(std::vector<Citizen> &population, std::vector<Ci
 
 		for (int j = 0; j < static_cast<int>(target.size()); j++)
 		{
-			citizen.solution += (rand() % 90) + 32;	//Set a random string for each citizen's solution
+			citizen.solution += rand() % 122;	//Set a random string for each citizen's solution
 		}
 
 		population.push_back(citizen);	//Push each citizen into the population vector
@@ -94,7 +94,7 @@ void Population::mate(std::vector<Citizen> &population, std::vector<Citizen> &bu
 
 void Population::printBestSolution(std::vector<Citizen> &population)	//Print the best solution
 {
-	std::cout << "Best solution: " << population[0].solution << " ,Fitness: " << population[0].fitness << "" << std::endl;
+	std::cout << "Best solution: " << population[0].solution << " Fitness: " << population[0].fitness << "" << std::endl;
 }
 
 void Population::swap(std::vector<Citizen> &population, std::vector<Citizen> &buffer) //Swap the citizens of population and buffer
