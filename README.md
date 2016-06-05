@@ -8,16 +8,11 @@ This program uses a genetic algorithm to evolve a random string into pre-determi
 Two classes, namely the Population class and Citizen class, were made for the purpose of this genetic algorithm. All the functions used are declared in the Population class, and defined in Population.cpp.
 
 #### Population
-The Population class defines the population that holds every citizen of a generation, where the population is defined as 
-    
-    std::vector<Citizen> Population;
-
-in Population.h.
-
-Some variables are defined in the default constructor to facilitate any modifications related to their values, such as the target string.
+The Population class defines the population that holds every citizen of a generation, where the population is defined as `std::vector<Citizen> Population;` in Population.h. 
+Some variables, such as `target` and `population_size` are defined in the default constructor to facilitate any modifications related to their values, such as the target string.
 
 #### Citizen
-The Citizen class defines each citizen of a population through each of their solutions and fitness.
+The Citizen class defines each citizen of a population through each of their solutions and fitness. These are defined by the member variables `solution` and `fitness`.
 
 ## Future Improvements and Modifications
 For now, the solutions guessed by citizens all have the same lengths as the target string. One modification for this would be to guess solutions of variable lengths. Other improvements include allowing users to input the target string, and implementing a neural network in tandem with the genetic algorithm.
