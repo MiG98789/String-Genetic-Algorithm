@@ -5,6 +5,7 @@ Population::Population() //Default constructor
 	population_size = 2000;
 	max_generation = 20000;
 	elitism_rate = 0.25f;
+	bad_apple_rate = 0.1f;
 	mutation_rate = 0.25f;
 	target = "Hello world!";
 	population.clear();
@@ -53,9 +54,14 @@ void Population::fitnessSort(std::vector<Citizen> &population)	//Sort population
 	std::sort(population.begin(), population.end(), Population::sortFunc);
 }
 
-void Population::eliteFilter(std::vector<Citizen> &population, std::vector<Citizen> &buffer, int elite_size)	//Put elite citizens into buffer
+void Population::filter(std::vector<Citizen> &population, std::vector<Citizen> &buffer, int elite_size, int bad_apple_size)	//Put elite citizens (and some non-elite citizens) into buffer
 {
 	for (int i = 0; i < elite_size; i++)
+	{
+		buffer[i] = population[i];
+	}
+
+	for (int i = static_cast<int>(buffer.size()) - bad_apple_size; i < static_cast<int>(buffer.size()); i++)
 	{
 		buffer[i] = population[i];
 	}
@@ -72,10 +78,11 @@ void Population::mutate(Citizen citizen)	//Mutate a citizen
 void Population::mate(std::vector<Citizen> &population, std::vector<Citizen> &buffer)	//Filter out elite citizens, and multiply them
 {
 	int elite_size = population_size * elitism_rate;
+	int bad_apple_size = population_size * bad_apple_rate;
 	int mate_pos;	//Find the multiply position for two strings
 	int i1, i2; //The i1-th and i2-th elite citizen will mate
 
-	Population::eliteFilter(population, buffer, elite_size);	//Filter out elite citizens into buffer
+	Population::filter(population, buffer, elite_size, bad_apple_size);	//Filter out elite citizens into buffer
 
 	for (int i = elite_size; i < population_size; i++)	//For the remaining citizens, they get replaced by the multiplied elite citizens
 	{

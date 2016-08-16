@@ -13,6 +13,7 @@ private:
 	int population_size;				//Size of the population
 	int max_generation;					//Maximum number of generations
 	float elitism_rate;					//Percentage of population considered as elite citizens
+	float bad_apple_rate;				//Percentage of non-elite citizens used for buffer
 	float mutation_rate;				//How much mutation will occur
 	std::string target;					//Target string
 	std::vector<Citizen> population;	//Population vector to hold all citizens	
@@ -25,7 +26,7 @@ public:
 	void calcFitness(std::vector<Citizen> &population);	//To calculate the fitness of each citizen of the population
 	static bool sortFunc(Citizen a, Citizen b);	//Sorting function
 	void fitnessSort(std::vector<Citizen> &population);	//Sort population by fitness
-	void eliteFilter(std::vector<Citizen> &population, std::vector<Citizen> &buffer, int elite_size);	//Put elite citizens into buffer
+	void filter(std::vector<Citizen> &population, std::vector<Citizen> &buffer, int elite_size, int bad_apple_size);	//Put elite citizens (and some bad citizens) into buffer
 	void mutate(Citizen citizen);	//Mutate a citizen
 	void mate(std::vector<Citizen> &population, std::vector<Citizen> &buffer);	//Filter out elite citizens, and multiply them
 	void printBestSolution(std::vector<Citizen> &population);	//Print the best solution
