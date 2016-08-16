@@ -15,4 +15,7 @@ Some variables, such as `target` and `population_size` are defined in the defaul
 The Citizen class defines each citizen of a population through each of their solutions and fitness. These are defined by the member variables `solution` and `fitness`.
 
 ## Future Improvements and Modifications
-For now, the solutions guessed by citizens all have the same lengths as the target string. One modification for this would be to guess solutions of variable lengths. Other improvements include allowing users to input the target string, and implementing a neural network in tandem with the genetic algorithm.
+One problem at the moment with the code is that there are times when the algorithm does not complete the string's evolution into "Hello world!". In other words, it occasionally gets stuck with a few more characters left. This could be due to errors with the mutate and mate functions.
+
+For now, the solutions guessed by citizens all have the same lengths as the target string. One modification for this would be to guess solutions of variable lengths. 
+Other improvements include allowing users to input the target string, and implementing a neural network in tandem with the genetic algorithm.
