@@ -1,4 +1,5 @@
-#pragma once
+#ifndef POPULATION_H
+#define POPULATION_H
 
 #include <vector>		//To store all citizens of a population
 #include <algorithm>	//To sort elements of vector
@@ -16,10 +17,10 @@ private:
 	float bad_apple_rate;				//Percentage of non-elite citizens used for buffer
 	float mutation_rate;				//How much mutation will occur
 	std::string target;					//Target string
-	std::vector<Citizen> population;	//Population vector to hold all citizens	
+	std::vector<Citizen> population;	//Population vector to hold all citizens
 
 public:
-	Population();	//Defualt constructor
+	Population();	//Default constructor
 	Population(int w, int x, float y, float z, std::string s, std::vector<Citizen> p) : population_size(w), max_generation(x), elitism_rate(y), mutation_rate(z), target(s), population(p) {}
 
 	void initPopulation(std::vector<Citizen> &population, std::vector<Citizen> &buffer);	//To initialise the population | buffer to store temporary population information
@@ -34,3 +35,5 @@ public:
 
 	int getMaxGen();	//Get maximum number of generations
 };
+
+#endif // POPULATION_H
