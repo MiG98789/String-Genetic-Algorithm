@@ -7,7 +7,7 @@ int main(int argc, char **argv)
 	Population pop;	//Create an object for Population
 	std::vector<Citizen> population_init, buffer_init;	//For *population and *buffer to reference to
 	std::vector<Citizen> *population, *buffer;
-	
+
 	pop.initPopulation(population_init, buffer_init);
 
 	population = &population_init;
@@ -28,6 +28,5 @@ int main(int argc, char **argv)
 		pop.swap(*population, *buffer);	//Swap the citizens of population and buffer
 	}
 
-	std::cin.get();	//To prevent the terminal from automatically closing
 	return 0;
 }

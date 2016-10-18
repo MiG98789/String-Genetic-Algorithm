@@ -3,7 +3,7 @@
 Population::Population() //Default constructor
 {
 	population_size = 2000;
-	max_generation = 20000;
+	max_generation = 30;
 	elitism_rate = 0.25f;
 	bad_apple_rate = 0.1f;
 	mutation_rate = 0.25f;
@@ -106,8 +106,8 @@ void Population::printBestSolution(std::vector<Citizen> &population)	//Print the
 
 void Population::swap(std::vector<Citizen> &population, std::vector<Citizen> &buffer) //Swap the citizens of population and buffer
 {
-	std::vector<Citizen> temp = population; 
-	population = buffer; 
+	std::vector<Citizen> temp = population;
+	population = buffer;
 	buffer = temp;
 }
 
