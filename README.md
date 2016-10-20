@@ -12,7 +12,7 @@ For every generation of the population, the best citizen's solution and fitness 
 Two classes, namely the `Population` class and `Citizen` class, were made for the purpose of this genetic algorithm. All the functions used are declared in the `Population` class, and defined in Population.cpp.
 
 #### Population
-The Population class defines the population that holds every citizen of a generation, where the population is defined as `std::vector<Citizen> Population;` in Population.h. 
+The Population class defines the population that holds every citizen of a generation, where the population is defined as `std::vector<Citizen> Population` in Population.h. 
 Some variables, such as `target` and `population_size` are defined in the default constructor to facilitate any modifications related to their values.
 
 #### Citizen
