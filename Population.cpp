@@ -3,7 +3,7 @@
 Population::Population() //Default constructor
 {
 	population_size = 2000;
-	max_generation = 30;
+	max_generation = 200;
 	elitism_rate = 0.25f;
 	bad_apple_rate = 0.1f;
 	mutation_rate = 0.25f;
@@ -67,7 +67,7 @@ void Population::filter(std::vector<Citizen> &population, std::vector<Citizen> &
 	}
 }
 
-void Population::mutate(Citizen citizen)	//Mutate a citizen
+void Population::mutate(Citizen &citizen)	//Mutate a citizen
 {
 	int mutation_pos = rand() % target.size();	//Find the position in the solution string to mutate
 	int mutation = rand() % 122;	//Find the character mutation

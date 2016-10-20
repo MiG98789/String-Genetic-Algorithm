@@ -28,7 +28,7 @@ public:
 	static bool sortFunc(Citizen a, Citizen b);	//Sorting function
 	void fitnessSort(std::vector<Citizen> &population);	//Sort population by fitness
 	void filter(std::vector<Citizen> &population, std::vector<Citizen> &buffer, int elite_size, int bad_apple_size);	//Put elite citizens (and some bad citizens) into buffer
-	void mutate(Citizen citizen);	//Mutate a citizen
+	void mutate(Citizen &citizen);	//Mutate a citizen
 	void mate(std::vector<Citizen> &population, std::vector<Citizen> &buffer);	//Filter out elite citizens, and multiply them
 	void printBestSolution(std::vector<Citizen> &population);	//Print the best solution
 	void swap(std::vector<Citizen> &population, std::vector<Citizen> &buffer);	//Swap the citizens of population and buffer
