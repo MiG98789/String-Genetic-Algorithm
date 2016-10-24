@@ -13,11 +13,11 @@ int main(int argc, char **argv)
 	population = &population_init;
 	buffer = &buffer_init;
 
-	for (int i = 0; i < pop.getMaxGen(); i++)
+	for (int i = 1; i <= pop.getMaxGen(); i++)
 	{
 		pop.calcFitness(*population);	//Calculate the fitness of every citizen
 		pop.fitnessSort(*population);	//Sort the population according to each citizen's fitness
-		pop.printBestSolution(*population);	//Print the best citizen
+		pop.printBestSolution(i, *population);	//Print the best citizen
 
 		if ((*population)[0].fitness == 0)	//If the solution has been found (i.e. fitness = 0), break
 		{

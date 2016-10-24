@@ -30,7 +30,7 @@ public:
 	void filter(std::vector<Citizen> &population, std::vector<Citizen> &buffer, int elite_size, int bad_apple_size);	//Put elite citizens (and some bad citizens) into buffer
 	void mutate(Citizen &citizen);	//Mutate a citizen
 	void mate(std::vector<Citizen> &population, std::vector<Citizen> &buffer);	//Filter out elite citizens, and multiply them
-	void printBestSolution(std::vector<Citizen> &population);	//Print the best solution
+	void printBestSolution(int generationNumber, std::vector<Citizen> &population);	//Print the best solution
 	void swap(std::vector<Citizen> &population, std::vector<Citizen> &buffer);	//Swap the citizens of population and buffer
 
 	int getMaxGen();	//Get maximum number of generations

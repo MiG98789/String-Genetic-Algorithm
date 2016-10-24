@@ -99,9 +99,9 @@ void Population::mate(std::vector<Citizen> &population, std::vector<Citizen> &bu
 	}
 }
 
-void Population::printBestSolution(std::vector<Citizen> &population)	//Print the best solution
+void Population::printBestSolution(int generationNumber, std::vector<Citizen> &population)	//Print the best solution
 {
-	std::cout << "Best solution: " << population[0].solution << " Fitness: " << population[0].fitness << "" << std::endl;
+	std::cout << "(" << generationNumber << ") Best solution: " << population[0].solution << " Fitness: " << population[0].fitness << "" << std::endl;
 }
 
 void Population::swap(std::vector<Citizen> &population, std::vector<Citizen> &buffer) //Swap the citizens of population and buffer

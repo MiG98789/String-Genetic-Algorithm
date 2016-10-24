@@ -1,7 +1,7 @@
 # String Genetic Algorithm
 
 ## Introduction
-[![https://gyazo.com/a8c17d2b45d1782ce91ed5ca37b1dc11](https://i.gyazo.com/a8c17d2b45d1782ce91ed5ca37b1dc11.png)](https://gyazo.com/a8c17d2b45d1782ce91ed5ca37b1dc11)
+[![https://gyazo.com/a280452a09ca6af46ab252299be3aaf9](https://i.gyazo.com/a280452a09ca6af46ab252299be3aaf9.png)](https://gyazo.com/a280452a09ca6af46ab252299be3aaf9)
 
 This program uses a genetic algorithm to evolve a random string into a pre-determined string, which is "Hello world!" by default. It was created using C++.
 
